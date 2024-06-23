@@ -17,6 +17,8 @@ public class login {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         Thread.sleep(40000);
 
+
+
         //login to application
         driver.findElement(By.cssSelector("input[name='username']")).sendKeys("Admin");
         driver.findElement(By.cssSelector("input[name='password']")).sendKeys("admin123");

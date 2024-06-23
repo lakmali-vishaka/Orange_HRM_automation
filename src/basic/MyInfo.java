@@ -1,5 +1,6 @@
 package basic;
 
+import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,40 +39,54 @@ public class MyInfo {
         // Wait for the My Info page to load
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[name='firstName']")));
 
-
         // Editing first name
         WebElement firstName = driver.findElement(By.cssSelector("input[name='firstName']"));
         firstName.clear();
-        firstName.sendKeys("nipunka");
+        firstName.sendKeys("viiqw");
 
         // Editing middle name
         WebElement middleName = driver.findElement(By.cssSelector("input[name='middleName']"));
         middleName.clear();
-        middleName.sendKeys("udyangasaman");
+        middleName.sendKeys("nw");
 
         // Editing last name
         WebElement lastName = driver.findElement(By.cssSelector("input[name='lastName']"));
         lastName.clear();
-        lastName.sendKeys("vijesekaranamal");
+        lastName.sendKeys("viq");
 
         Thread.sleep(20000);
 
+        // Locate the status element
+        WebElement statusElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[2]/div/div[2]/div/div/div[2]/i")));
+        statusElement.click();
 
-        // Married status
-        WebElement status = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".oxd-select-text--active")));
-        status.click();
-        WebElement single = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='option' and text()='Single']")));
-        single.click();
+        // Click married
+        WebElement married = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[2]/div/div[2]/div/div/div[1]")));
+        married.click();
 
         // Gender
-        WebElement gender = driver.findElement(By.cssSelector("input[value='1']"));
+        WebElement gender = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/label/span")));
         gender.click();
+
+        // Attachments
+        WebElement add = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div[1]/div/button")));
+        add.click();
+
+        /*
+
+        // Browse and upload the file
+        WebElement browse = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/form/div[1]/div/div/div/div[2]/div/div[1]")));
+        browse.sendKeys("C:\\Users\\visha\\OneDrive\\Desktop\\Orange_HRM_Automation\\src\\basic\\20APC5043.pdf");
+
+
+        WebElement save = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/form/div[3]/button[2]")));
+        save.click();
+
+         */
 
         // Save the changes
         WebElement saveButton = driver.findElement(By.cssSelector(".oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space"));
         saveButton.click();
-
-        // Verification can be added here if needed
 
         // Close the browser
         driver.quit();
