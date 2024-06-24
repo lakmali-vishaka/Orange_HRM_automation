@@ -44,15 +44,15 @@ public class AddNationality {
         nationalityButton.click();
 
         // Wait for Nationalities page to load
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".oxd-button.oxd-button--medium.oxd-button--secondary")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div[1]/div/button")));
 
         // Click on the Add button
-        WebElement addButton = driver.findElement(By.cssSelector(".oxd-button.oxd-button--medium.oxd-button--secondary"));
+        WebElement addButton = driver.findElement(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div[1]/div/button"));
         addButton.click();
 
         // Wait for Add Nationality form to appear
         WebElement nameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[2]/input")));
-        nameField.sendKeys("Nimal");
+        nameField.sendKeys("Nimalaa");
 
         // Save the new nationality
         WebElement saveButton = driver.findElement(By.cssSelector(".oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space"));

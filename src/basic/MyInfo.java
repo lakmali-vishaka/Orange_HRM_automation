@@ -42,17 +42,17 @@ public class MyInfo {
         // Editing first name
         WebElement firstName = driver.findElement(By.cssSelector("input[name='firstName']"));
         firstName.clear();
-        firstName.sendKeys("viiqw");
+        firstName.sendKeys("rrq");
 
         // Editing middle name
         WebElement middleName = driver.findElement(By.cssSelector("input[name='middleName']"));
         middleName.clear();
-        middleName.sendKeys("nw");
+        middleName.sendKeys("nwarrasa");
 
         // Editing last name
         WebElement lastName = driver.findElement(By.cssSelector("input[name='lastName']"));
         lastName.clear();
-        lastName.sendKeys("viq");
+        lastName.sendKeys("viqmberrrga");
 
         Thread.sleep(20000);
 
@@ -72,17 +72,19 @@ public class MyInfo {
         WebElement add = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div[1]/div/button")));
         add.click();
 
-        /*
 
+/*
         // Browse and upload the file
-        WebElement browse = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/form/div[1]/div/div/div/div[2]/div/div[1]")));
-        browse.sendKeys("C:\\Users\\visha\\OneDrive\\Desktop\\Orange_HRM_Automation\\src\\basic\\20APC5043.pdf");
 
+        WebElement fileInput = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".oxd-file-button")));
+        fileInput.sendKeys("C:\\Users\\visha\\OneDrive\\Desktop\\Orange_HRM_Automation\\src\\basic\\file.png");
+
+*/
 
         WebElement save = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/form/div[3]/button[2]")));
         save.click();
 
-         */
+
 
         // Save the changes
         WebElement saveButton = driver.findElement(By.cssSelector(".oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space"));
